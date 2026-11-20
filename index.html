@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Blu Ice Website Concept</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&display=swap" rel="stylesheet">
+<style>
+/* Layout idea: Blu Ice's own navy / ice blue / pink, with photography doing the work.
+   Dark navy bands alternate with white and pale ice; one pink accent reserved for financing and what's new. */
+:root{
+  color-scheme:light;
+  --navy:#0C1C2D; --navy-2:#142B42; --navy-3:#1D3A57; --slate:#48596B;
+  --blue:#42B2D7; --blue-dark:#2590B6; --ice:#BFE9F7; --ice-2:#E4F6FC; --mist:#F3F7FA;
+  --pink:#D74296; --ink:#0C1C2D; --body:#4B5C6D; --line:#DCE5EC; --white:#fff; --gold:#F2BE3E;
+  --display:"Playfair Display",Georgia,"Times New Roman",serif;
+  --sans:Inter,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --r:18px; --r-lg:28px;
+  --shadow:0 24px 60px -24px rgba(12,28,45,.35);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--sans);color:var(--ink);background:var(--white);line-height:1.6;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit}
+h1,h2,h3{font-family:var(--display);line-height:1.1;margin:0;text-wrap:balance;font-weight:600}
+p{margin:0}
+.wrap{max-width:1200px;margin:0 auto;padding:0 24px}
+.sec{padding:104px 0}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--blue-dark)}
+.eyebrow::before{content:"";width:28px;height:1px;background:currentColor}
+.h2{font-size:clamp(32px,4.2vw,50px);margin:18px 0 16px}
+.h2 em{font-style:italic;font-weight:500;color:var(--blue-dark)}
+.lead{color:var(--body);font-size:17px;max-width:58ch}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font:600 15px var(--sans);padding:15px 28px;border-radius:999px;border:1px solid transparent;cursor:pointer;transition:transform .2s,background .2s,border-color .2s,box-shadow .2s}
+.btn:hover{transform:translateY(-1px)}
+.btn-blue{background:var(--blue);color:#06202C;box-shadow:0 10px 26px -10px rgba(66,178,215,.8)}
+.btn-blue:hover{background:#5CC2E3}
+.btn-ghost{border-color:rgba(255,255,255,.4);color:#fff}.btn-ghost:hover{background:rgba(255,255,255,.1)}
+.btn-pink{background:var(--pink);color:#fff}
+.btn-line{border-color:var(--line);color:var(--ink);background:#fff}.btn-line:hover{border-color:var(--blue)}
+.btn-sm{padding:10px 20px;font-size:14px}
+:focus-visible{outline:3px solid var(--blue);outline-offset:3px}
+.stars{color:var(--gold);letter-spacing:2px}
+
+/* proposal bar + view switch */
+.pbar{background:#07121E;color:rgba(255,255,255,.8);font-size:13px}
+.pbar .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px 20px;flex-wrap:wrap;padding-top:10px;padding-bottom:10px}
+.pbar b{color:#fff;font-weight:600}
+.switch{display:inline-flex;background:rgba(255,255,255,.08);border-radius:999px;padding:4px}
+.switch a{padding:7px 18px;border-radius:999px;font-weight:600;font-size:13px;color:rgba(255,255,255,.75)}
+.switch a[aria-current="page"]{background:var(--pink);color:#fff}
+.view[hidden]{display:none}
+
+/* logo */
+.logo{display:inline-flex;align-items:center;gap:16px}
+.logo img{height:46px;width:auto}
+.logo span{font:500 10.5px var(--sans);letter-spacing:.36em;color:var(--ice);padding-left:16px;border-left:1px solid rgba(255,255,255,.28);white-space:nowrap}
+
+/* header */
+.site-head{position:sticky;top:0;z-index:50;background:rgba(12,28,45,.94);backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,.08)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:84px;gap:20px}
+.nav ul{display:flex;gap:30px;list-style:none;margin:0;padding:0;font-size:14px;font-weight:500;color:rgba(255,255,255,.8)}
+.nav ul a:hover{color:#fff}
+.nav-right{display:flex;align-items:center;gap:20px}
+.tel{color:#fff;font-size:14px;font-weight:600;white-space:nowrap}
+
+/* hero */
+.hero{position:relative;background:radial-gradient(900px 520px at 78% 18%,rgba(66,178,215,.22),transparent 65%),linear-gradient(160deg,var(--navy) 0%,var(--navy-2) 100%);color:#fff;padding:84px 0 110px;overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:64px;align-items:center}
+.pill{display:inline-flex;gap:10px;align-items:center;font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--ice);border:1px solid rgba(191,233,247,.3);background:rgba(191,233,247,.07);padding:9px 18px;border-radius:999px}
+.pill i{width:6px;height:6px;border-radius:50%;background:var(--blue)}
+.hero h1{font-size:clamp(46px,6.6vw,84px);margin:26px 0 22px;font-weight:700;letter-spacing:-.01em}
+.grad{font-style:italic;font-weight:500;background:linear-gradient(135deg,#BFE9F7,#42B2D7);-webkit-background-clip:text;background-clip:text;color:transparent;padding-right:.08em}
+.hero .sub{font-size:19px;color:rgba(255,255,255,.82);max-width:46ch}
+.cta-row{display:flex;flex-wrap:wrap;gap:12px;margin:36px 0 44px}
+.proof{display:flex;flex-wrap:wrap;gap:16px 40px;font-size:13px;color:rgba(255,255,255,.72);padding-top:28px;border-top:1px solid rgba(255,255,255,.12)}
+.proof b{display:block;color:#fff;font:600 24px var(--display);margin-bottom:2px}
+.hero-photo{position:relative}
+.hero-photo .frame{border-radius:220px 220px var(--r-lg) var(--r-lg);overflow:hidden;aspect-ratio:4/5;box-shadow:var(--shadow);border:1px solid rgba(255,255,255,.14)}
+.hero-photo img{width:100%;height:100%;object-fit:cover;object-position:46% 30%}
+.float{position:absolute;background:#fff;color:var(--ink);border-radius:var(--r);padding:14px 18px;box-shadow:var(--shadow);font-size:13px;line-height:1.35}
+.float b{display:block;font-size:15px}
+.float.a{left:-34px;bottom:74px}
+.float.b{right:-18px;top:92px}
+.float small{color:var(--body)}
+.dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:#2FBF71;margin-right:6px}
+
+/* trust */
+.trust{background:var(--navy);color:rgba(255,255,255,.78);border-top:1px solid rgba(255,255,255,.08)}
+.trust .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:0}
+.trust div{padding:22px 18px;font-size:13px;font-weight:500;text-align:center;border-left:1px solid rgba(255,255,255,.08)}
+.trust div:first-child{border-left:0}
+.trust b{color:var(--ice);font-weight:600}
+
+/* treatments */
+.head-row{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;margin-bottom:48px}
+.tgrid{display:grid;grid-template-columns:1.25fr 1fr 1fr;grid-template-rows:auto auto;gap:20px}
+.tcard{position:relative;background:var(--mist);border-radius:var(--r-lg);padding:30px;display:flex;flex-direction:column;gap:10px;min-height:220px;transition:transform .2s,box-shadow .2s,background .2s}
+.tcard:hover{transform:translateY(-3px);background:var(--ice-2);box-shadow:var(--shadow)}
+.tcard h3{font-size:25px}
+.tcard p{color:var(--body);font-size:15px}
+.tcard .more{margin-top:auto;font-weight:600;font-size:14px;color:var(--blue-dark)}
+.tag{font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--blue-dark)}
+.tcard.big{grid-row:span 2;color:#fff;background:var(--navy);overflow:hidden;justify-content:flex-end;min-height:460px;padding:36px}
+.tcard.big::before{content:"";position:absolute;inset:0;background:url("img/ba-core.jpg") 88% center/cover;opacity:.5}
+.tcard.big::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(12,28,45,.2) 0%,rgba(12,28,45,.94) 72%)}
+.tcard.big>*{position:relative;z-index:1}
+.tcard.big .more{margin-top:10px}
+.tcard.big h3{font-size:40px}.tcard.big p{color:rgba(255,255,255,.82);max-width:36ch}.tcard.big .tag,.tcard.big .more{color:var(--ice)}
+
+/* results */
+.results{background:linear-gradient(180deg,var(--mist),#fff)}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{border:1px solid var(--line);background:#fff;border-radius:999px;padding:9px 18px;font:500 14px var(--sans);cursor:pointer;color:var(--ink)}
+.chip[aria-pressed="true"]{background:var(--navy);color:#fff;border-color:var(--navy)}
+.gal{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.ba{margin:0;border-radius:var(--r-lg);overflow:hidden;background:#fff;box-shadow:0 1px 0 var(--line),0 18px 40px -28px rgba(12,28,45,.4)}
+.ba[hidden]{display:none}
+.ba .ph{position:relative;aspect-ratio:1/1;background:var(--navy-2)}
+.ba.wide{grid-column:span 2}.ba.wide .ph{aspect-ratio:2.06/1}
+.ba img{width:100%;height:100%;object-fit:cover}
+.lab{position:absolute;top:14px;font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;background:rgba(12,28,45,.78);color:#fff;padding:6px 12px;border-radius:999px}
+.lab.l{left:14px}.lab.r{right:14px;background:var(--blue);color:#06202C}
+.ba.v .lab.r{right:auto;left:14px;top:auto;bottom:14px}
+.ba figcaption{padding:16px 20px;display:flex;justify-content:space-between;align-items:center;gap:10px;font-weight:600;font-size:15px}
+.ba figcaption span{font-size:12px;font-weight:500;color:var(--body)}
+.gtile{border-radius:var(--r-lg);background:var(--navy);color:#fff;padding:30px;display:flex;flex-direction:column;justify-content:flex-end;align-items:flex-start;gap:14px;min-height:240px}
+.gtile h3{font-size:26px}.gtile .tag{color:var(--ice)}
+.fine{font-size:12px;color:var(--body);margin-top:20px}
+
+/* funsculpting band */
+.fs{background:var(--navy);color:#fff;border-radius:var(--r-lg);padding:56px;display:grid;grid-template-columns:1.2fr .8fr;gap:48px;align-items:center;position:relative;overflow:hidden;margin-top:72px}
+.fs::before{content:"";position:absolute;right:-120px;top:-120px;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(215,66,150,.45),transparent 68%)}
+.fs>*{position:relative}
+.fs .tag{color:#F29BCB}
+.fs h3{font-size:clamp(30px,3.6vw,44px);margin:14px 0}
+.fs p{color:rgba(255,255,255,.8);max-width:48ch}
+.fs ul{list-style:none;margin:0;padding:0;display:grid;gap:14px;font-size:15px}
+.fs li{display:flex;gap:12px;align-items:flex-start;padding:16px 18px;border:1px solid rgba(255,255,255,.14);border-radius:var(--r);background:rgba(255,255,255,.04)}
+.fs li::before{content:"";flex:none;width:8px;height:8px;border-radius:50%;background:var(--pink);margin-top:8px}
+
+/* locations */
+.lgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.loc{border:1px solid var(--line);border-radius:var(--r-lg);overflow:hidden;background:#fff;display:flex;flex-direction:column}
+.map{height:150px;position:relative;background:
+  linear-gradient(90deg,transparent 48%,rgba(255,255,255,.9) 48% 52%,transparent 52%),
+  linear-gradient(0deg,transparent 58%,rgba(255,255,255,.9) 58% 62%,transparent 62%),
+  linear-gradient(30deg,transparent 30%,rgba(255,255,255,.7) 30% 33%,transparent 33%),
+  var(--ice-2)}
+.map::after{content:"";position:absolute;left:50%;top:60%;width:18px;height:18px;margin:-18px 0 0 -9px;border-radius:50% 50% 50% 0;transform:rotate(-45deg);background:var(--pink);box-shadow:0 6px 14px rgba(215,66,150,.5)}
+.map span{position:absolute;right:12px;bottom:10px;font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--blue-dark)}
+.loc .in{padding:26px;display:flex;flex-direction:column;gap:14px;flex:1}
+.loc h3{font-size:26px}
+.loc dl{margin:0;font-size:14px;color:var(--body);display:grid;gap:4px}
+.loc dt{font-weight:700;color:var(--ink);font-size:10px;letter-spacing:.18em;text-transform:uppercase;margin-top:8px}
+.loc dd{margin:0}
+.row{display:flex;gap:10px;flex-wrap:wrap;margin-top:auto;padding-top:8px}
+
+/* reviews */
+.rev{background:linear-gradient(160deg,var(--navy),var(--navy-2));color:#fff}
+.rev .lead{color:rgba(255,255,255,.75)}.rev .eyebrow{color:var(--ice)}.rev .h2 em{color:var(--ice)}
+.rev-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:56px;align-items:center}
+.score{display:flex;gap:18px;align-items:center;margin-top:30px}
+.score b{font:700 76px/1 var(--display)}
+.rcards{display:grid;gap:16px}
+.rcard{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:var(--r);padding:24px;display:grid;grid-template-columns:48px 1fr;gap:16px;align-items:start}
+.rcard:nth-child(2){margin-left:36px}
+.av{width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,var(--ice),var(--blue))}
+.bar{height:9px;border-radius:5px;background:rgba(255,255,255,.16);margin:10px 0}
+.rcard small{color:var(--ice);font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase}
+
+/* team */
+.team{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.person .pic{border-radius:var(--r-lg);overflow:hidden;aspect-ratio:4/5;background:var(--mist);margin-bottom:18px}
+.person img{width:100%;height:100%;object-fit:cover;object-position:center 18%;transition:transform .5s}
+.person:hover img{transform:scale(1.04)}
+.person h3{font-size:24px}
+.person .role{font-size:13px;color:var(--blue-dark);font-weight:600;margin:6px 0 8px}
+.person p{font-size:14px;color:var(--body)}
+
+/* financing + faq + final */
+.fin{background:var(--ice-2);border-radius:var(--r-lg);padding:48px;display:grid;grid-template-columns:1fr auto;gap:28px;align-items:center}
+.fin h2{font-size:34px;margin:14px 0 8px}
+.faq{display:grid;grid-template-columns:.8fr 1.2fr;gap:56px;margin-top:96px}
+details{border-bottom:1px solid var(--line);padding:20px 0}
+details:first-of-type{border-top:1px solid var(--line)}
+summary{font-weight:600;cursor:pointer;font-size:17px;list-style:none;display:flex;justify-content:space-between;gap:16px}
+summary::after{content:"+";font:400 24px/1 var(--sans);color:var(--blue-dark)}
+details[open] summary::after{content:"–"}
+details p{color:var(--body);margin-top:12px;font-size:15px;max-width:60ch}
+.final{background:radial-gradient(700px 360px at 50% 0,rgba(66,178,215,.25),transparent 70%),var(--navy);color:#fff;text-align:center}
+.final h2{font-size:clamp(36px,5vw,60px)}
+.final p{color:rgba(255,255,255,.8);max-width:52ch;margin:18px auto 34px}
+footer{background:#07121E;color:rgba(255,255,255,.68);padding:72px 0 110px;font-size:14px}
+.fgrid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:40px}
+footer h4{font:700 10px var(--sans);letter-spacing:.22em;text-transform:uppercase;color:var(--ice);margin:0 0 16px}
+footer ul{list-style:none;padding:0;margin:0;display:grid;gap:9px}
+footer .logo img{height:60px}
+.copy{border-top:1px solid rgba(255,255,255,.1);margin-top:48px;padding-top:22px;font-size:12px}
+
+/* booking modal */
+.modal{position:fixed;inset:0;background:rgba(7,18,30,.72);display:none;place-items:center;z-index:100;padding:20px}
+.modal.open{display:grid}
+.sheet{background:#fff;border-radius:var(--r-lg);max-width:540px;width:100%;padding:36px;position:relative;max-height:92vh;overflow:auto}
+.sheet h3{font-size:28px;margin-bottom:6px}
+.x{position:absolute;top:14px;right:18px;border:0;background:none;font-size:28px;cursor:pointer;color:var(--slate)}
+.step{font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--blue-dark);margin:24px 0 10px}
+.sheet .btn{width:100%;margin-top:28px}
+.note{font-size:12px;color:var(--body);text-align:center;margin-top:12px}
+.mbar{display:none;position:fixed;left:0;right:0;bottom:0;z-index:60;background:#fff;border-top:1px solid var(--line);padding:10px 12px;gap:8px}
+.mbar a{flex:1;text-align:center;padding:12px 6px;border-radius:999px;font-weight:600;font-size:14px;border:1px solid var(--line)}
+.mbar a.p{background:var(--blue);border-color:var(--blue);color:#06202C}
+
+/* ---------- notes view ---------- */
+.notes{background:var(--mist)}
+.n-hero{background:linear-gradient(160deg,var(--navy),var(--navy-2));color:#fff;padding:72px 0 120px}
+.n-hero h1{font-size:clamp(34px,5vw,58px);max-width:18ch;margin:18px 0}
+.n-hero p{color:rgba(255,255,255,.8);font-size:18px;max-width:58ch}
+.n-hero .eyebrow{color:var(--ice)}
+.n-body{max-width:860px;margin:-72px auto 0;padding:0 24px 96px;display:grid;gap:24px}
+.panel{background:#fff;border-radius:var(--r-lg);padding:40px;box-shadow:0 1px 0 var(--line),0 20px 50px -34px rgba(12,28,45,.4)}
+.panel h2{font-size:30px;margin-bottom:10px}
+.panel>p{color:var(--body);max-width:64ch}
+.panel>p+p{margin-top:12px}
+.scores{display:grid;gap:14px;margin-top:26px}
+.sc{display:grid;grid-template-columns:170px 1fr 44px;gap:16px;align-items:center;font-size:14px;font-weight:600}
+.track{height:10px;border-radius:5px;background:var(--mist);overflow:hidden}
+.track i{display:block;height:100%;border-radius:5px;background:var(--blue)}
+.sc.low .track i{background:var(--pink)}
+.sc span:last-child{text-align:right;font-variant-numeric:tabular-nums;color:var(--body)}
+.overall{display:flex;align-items:baseline;gap:14px;margin-top:22px;padding-top:22px;border-top:1px solid var(--line)}
+.overall b{font:700 54px/1 var(--display)}
+.issues{list-style:none;margin:24px 0 0;padding:0;display:grid;gap:0;counter-reset:i}
+.issues li{counter-increment:i;display:grid;grid-template-columns:44px 1fr;gap:16px;padding:22px 0;border-top:1px solid var(--line)}
+.issues li::before{content:counter(i,decimal-leading-zero);font:600 20px var(--display);color:var(--blue-dark)}
+.issues h3{font:600 17px var(--sans);margin-bottom:4px}
+.issues p{color:var(--body);font-size:15px}
+.issues .fix{margin-top:8px;font-size:14px;color:var(--ink)}
+.issues .fix b{color:var(--blue-dark)}
+.logo-demo{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:24px}
+.ld{border-radius:var(--r);background:var(--navy);padding:16px 20px 26px;color:#fff}
+.ld small{display:block;font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--ice);margin-bottom:22px}
+.ld .bar2{display:flex;align-items:center;gap:14px;height:60px}
+.old-logo{width:40px;height:40px;background:var(--slate);display:grid;place-items:center;flex:none}
+.old-logo img{width:22px}
+.fake-nav{display:flex;gap:14px;font-size:11px;color:rgba(255,255,255,.55)}
+.flow{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:26px 0 8px}
+.flow div{background:var(--mist);border-radius:var(--r);padding:18px;font-size:14px;position:relative}
+.flow b{display:block;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--blue-dark);margin-bottom:6px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:12px 28px;margin-top:20px;list-style:none;padding:0}
+.two li{font-size:15px;color:var(--body);padding-left:20px;position:relative}
+.two li::before{content:"";position:absolute;left:0;top:10px;width:8px;height:8px;border-radius:50%;background:var(--blue)}
+.two b{color:var(--ink)}
+.panel.dark{background:var(--navy);color:#fff}
+.panel.dark>p{color:rgba(255,255,255,.82)}
+.panel.dark .tag{color:#F29BCB}
+.sign{margin-top:26px;padding-top:22px;border-top:1px solid rgba(255,255,255,.14);display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+.sign b{font:600 22px var(--display);display:block}
+.sign small{color:rgba(255,255,255,.7)}
+
+@media(max-width:1000px){
+  .nav ul,.tel{display:none}
+  .hero-grid,.rev-grid,.faq,.fs{grid-template-columns:1fr}
+  .hero-photo{max-width:440px;margin:0 auto}
+  .float.a{left:-8px}.float.b{right:-8px}
+  .tgrid{grid-template-columns:1fr 1fr}.tcard.big{grid-column:span 2;grid-row:auto;min-height:340px}
+  .gal{grid-template-columns:1fr 1fr}
+  .lgrid{grid-template-columns:1fr}
+  .team{grid-template-columns:1fr 1fr}
+  .fgrid{grid-template-columns:1fr 1fr}
+  .trust .wrap{grid-template-columns:1fr 1fr}.trust div:nth-child(3){border-left:0}
+  .flow{grid-template-columns:1fr 1fr}
+}
+@media(max-width:640px){
+  .sec{padding:72px 0}
+  .hero{padding:56px 0 80px}
+  .tgrid,.gal,.fgrid,.logo-demo,.two{grid-template-columns:1fr}
+  .tcard.big,.ba.wide{grid-column:auto}.ba.wide .ph{aspect-ratio:1.6/1}
+  .fs,.fin,.panel{padding:28px}
+  .fin{grid-template-columns:1fr}
+  .rcard:nth-child(2){margin-left:0}
+  .nav-right .btn{display:none}
+  .logo span{display:none}
+  .view-concept .mbar{display:flex}
+  .sc{grid-template-columns:1fr 44px}.sc .track{grid-column:1/-1;order:3}
+  .float.b{top:40px}
+}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body class="view-concept">
+
+<div class="pbar">
+  <div class="wrap">
+    <div><b>Website concept for Blu Ice Med Spa</b> · Rough draft by Avery Racine · Not the live site</div>
+    <nav class="switch" aria-label="Sections">
+      <a href="#concept" data-view="concept" aria-current="page">The concept</a>
+      <a href="#notes" data-view="notes">Avery's notes</a>
+    </nav>
+  </div>
+</div>
+
+<!-- ======================= CONCEPT ======================= -->
+<div class="view" id="view-concept">
+
+<header class="site-head">
+  <div class="wrap nav">
+    <a href="#concept" class="logo" aria-label="Blu Ice Med Spa">
+      <img src="img/logo-white.png" alt="Blu Ice" width="900" height="381">
+      <span>MED SPA</span>
+    </a>
+    <ul>
+      <li><a href="#treatments">Treatments</a></li>
+      <li><a href="#results">Results</a></li>
+      <li><a href="#locations">Locations</a></li>
+      <li><a href="#reviews">Reviews</a></li>
+      <li><a href="#team">Team</a></li>
+      <li><a href="#financing">Financing</a></li>
+    </ul>
+    <div class="nav-right">
+      <span class="tel">(651) 330-8642</span>
+      <button class="btn btn-blue btn-sm" data-book>Book Now</button>
+    </div>
+  </div>
+</header>
+
+<main>
+<div class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="pill"><i></i>Woodbury <i></i>Chanhassen <i></i>Fargo</span>
+      <h1>Reveal Your<br><span class="grad">Best Self</span></h1>
+      <p class="sub">Body sculpting, injectables and skin treatments from licensed providers, at three locations across Minnesota and North Dakota.</p>
+      <div class="cta-row">
+        <button class="btn btn-blue" data-book>Book a Consultation</button>
+        <a class="btn btn-ghost" href="#results">See Real Results</a>
+        <a class="btn btn-pink" href="#financing">Financing</a>
+      </div>
+      <div class="proof">
+        <div><b>4.8 <span class="stars" style="font-size:16px">★★★★★</span></b>120+ Google reviews</div>
+        <div><b>3</b>Locations</div>
+        <div><b>0% APR</b>Payment plans available</div>
+      </div>
+    </div>
+    <div class="hero-photo">
+      <div class="frame"><img src="img/hero.jpg" alt="Blu Ice Med Spa treatment room" width="1375" height="771"></div>
+      <div class="float b"><span class="stars">★★★★★</span><b>4.8 on Google</b><small>120+ patient reviews</small></div>
+      <div class="float a"><small><span class="dot"></span>Next opening</small><b>Tomorrow, 10:00 AM</b><small>Woodbury · Body Sculpting consult</small></div>
+    </div>
+  </div>
+</div>
+
+<div class="trust">
+  <div class="wrap">
+    <div><b>Licensed</b> medical providers</div>
+    <div><b>FDA-cleared</b> technology</div>
+    <div><b>Complimentary</b> consultations</div>
+    <div><b>Locally owned</b> and operated</div>
+  </div>
+</div>
+
+<section class="sec" id="treatments">
+  <div class="wrap">
+    <div class="head-row">
+      <div>
+        <span class="eyebrow">Our Treatments</span>
+        <h2 class="h2">Signature <em>Services</em></h2>
+        <p class="lead">Pick what you want to work on. Every plan starts with a free consultation.</p>
+      </div>
+      <button class="btn btn-line" data-book>Not sure? Book a consult</button>
+    </div>
+    <div class="tgrid">
+      <a class="tcard big" href="#results">
+        <span class="tag">Most requested</span>
+        <h3>Body Sculpting</h3>
+        <p>Muscle toning, contouring and cellulite treatments with InMode and Venus technology. No surgery and no downtime.</p>
+        <span class="more">See results and options →</span>
+      </a>
+      <a class="tcard" href="#treatments"><span class="tag">Needle-free</span><h3>Facial Toning</h3><p>Treats facial skin and muscle in the same visit, without injections.</p><span class="more">Learn more →</span></a>
+      <a class="tcard" href="#treatments"><span class="tag">Injectables</span><h3>Fillers &amp; Tox</h3><p>Tox, fillers and Sculptra from licensed injectors, planned around your face.</p><span class="more">Learn more →</span></a>
+      <a class="tcard" href="#treatments"><span class="tag">Wellness</span><h3>Peptide Therapy</h3><p>Provider-guided peptide and weight management programs.</p><span class="more">Learn more →</span></a>
+      <a class="tcard" href="#treatments"><span class="tag">Skin</span><h3>Laser &amp; Facials</h3><p>Laser hair removal, photo rejuvenation and clinical facials.</p><span class="more">Learn more →</span></a>
+    </div>
+  </div>
+</section>
+
+<section class="sec results" id="results">
+  <div class="wrap">
+    <div class="head-row">
+      <div>
+        <span class="eyebrow">Before &amp; After</span>
+        <h2 class="h2">Real patients.<br><em>Unretouched</em> results.</h2>
+        <p class="lead">Body sculpting is what Blu Ice is known for. These are our own patients, shared with their consent.</p>
+      </div>
+      <div class="chips" id="filters">
+        <button class="chip" aria-pressed="true" data-f="all">All</button>
+        <button class="chip" aria-pressed="false" data-f="body">Body Sculpting</button>
+        <button class="chip" aria-pressed="false" data-f="skin">Laser &amp; Skin</button>
+      </div>
+    </div>
+    <div class="gal" id="gal">
+      <figure class="ba wide" data-c="body"><div class="ph"><img src="img/ba-core.jpg" alt="Before and after: core body sculpting" width="1200" height="772"><span class="lab l">Before</span><span class="lab r">After</span></div><figcaption>Core Body Sculpting <span>Body Sculpting</span></figcaption></figure>
+      <figure class="ba" data-c="body"><div class="ph"><img loading="lazy" src="img/ba-thigh.jpg" alt="Before and after: thigh cellulite reduction" width="791" height="780"><span class="lab l">Before</span><span class="lab r">After</span></div><figcaption>Cellulite Reduction · Thigh <span>Body Sculpting</span></figcaption></figure>
+      <figure class="ba" data-c="body"><div class="ph"><img loading="lazy" src="img/ba-knee.jpg" alt="Before and after: knee area sculpting" width="784" height="780"><span class="lab l">Before</span><span class="lab r">After</span></div><figcaption>Knee Area Sculpting <span>Body Sculpting</span></figcaption></figure>
+      <figure class="ba" data-c="body"><div class="ph"><img loading="lazy" src="img/ba-leg.jpg" alt="Before and after: leg cellulite treatment" width="800" height="753"><span class="lab l">Before</span><span class="lab r">After</span></div><figcaption>Leg Cellulite Treatment <span>Body Sculpting</span></figcaption></figure>
+      <figure class="ba v" data-c="skin"><div class="ph"><img loading="lazy" src="img/ba-neck.jpg" alt="Before and after: neck skin rejuvenation" width="763" height="780"><span class="lab l">Before</span><span class="lab r">After</span></div><figcaption>Neck Skin Rejuvenation <span>Laser &amp; Skin</span></figcaption></figure>
+      <figure class="ba wide" data-c="body"><div class="ph"><img loading="lazy" src="img/ba-male.jpg" alt="Before and after: male body sculpting" width="1300" height="642"><span class="lab l">Before</span><span class="lab r">After</span></div><figcaption>Male Body Sculpting <span>Body Sculpting</span></figcaption></figure>
+      <div class="gtile"><span class="tag">Your turn</span><h3>See what a plan looks like for you</h3><button class="btn btn-blue btn-sm" data-book>Book a free consult</button></div>
+    </div>
+    <p class="fine">Individual results vary. Photos are unretouched and shared with patient consent.</p>
+
+    <div class="fs">
+      <div>
+        <span class="tag">New · Coming to Blu Ice</span>
+        <h3>FunSculpting</h3>
+        <p>Our most advanced body contouring procedure, performed in-office by a licensed provider. Consultations open soon at Blu Ice.</p>
+        <button class="btn btn-pink" style="margin-top:26px" data-book>Join the Priority List</button>
+      </div>
+      <ul>
+        <li>Performed in-office by a licensed provider</li>
+        <li>Starts with a one-on-one consultation</li>
+        <li>Payment plans available</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="locations">
+  <div class="wrap">
+    <div class="head-row">
+      <div>
+        <span class="eyebrow">Locations</span>
+        <h2 class="h2">Find Your <em>Blu Ice</em></h2>
+        <p class="lead">Each location gets its own page, map, hours and online booking.</p>
+      </div>
+    </div>
+    <div class="lgrid">
+      <div class="loc"><div class="map"><span>Live map</span></div><div class="in">
+        <h3>Woodbury, MN</h3>
+        <dl><dt>Address</dt><dd>9900 Valley Creek Rd, Suite 105<br>Woodbury, MN 55125</dd><dt>Hours</dt><dd>Mon–Fri 9am–6pm · Sat 10am–4pm</dd></dl>
+        <div class="row"><button class="btn btn-blue btn-sm" data-book data-loc="Woodbury">Book Woodbury</button><span class="btn btn-line btn-sm">Call (651) 330-8642</span></div>
+      </div></div>
+      <div class="loc"><div class="map"><span>Live map</span></div><div class="in">
+        <h3>Chanhassen, MN</h3>
+        <dl><dt>Address</dt><dd>Street address<br>Chanhassen, MN</dd><dt>Hours</dt><dd>Location hours</dd></dl>
+        <div class="row"><button class="btn btn-blue btn-sm" data-book data-loc="Chanhassen">Book Chanhassen</button><span class="btn btn-line btn-sm">Call</span></div>
+      </div></div>
+      <div class="loc"><div class="map"><span>Live map</span></div><div class="in">
+        <h3>Fargo, ND</h3>
+        <dl><dt>Address</dt><dd>3475 45th St S, #16<br>Fargo, ND 58104</dd><dt>Hours</dt><dd>Location hours</dd></dl>
+        <div class="row"><button class="btn btn-blue btn-sm" data-book data-loc="Fargo">Book Fargo</button><span class="btn btn-line btn-sm">Call</span></div>
+      </div></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec rev" id="reviews">
+  <div class="wrap rev-grid">
+    <div>
+      <span class="eyebrow">Patient Reviews</span>
+      <h2 class="h2">Trusted by your <em>neighbors</em></h2>
+      <p class="lead">Reviews pull in live from Google, so patients see the real thing.</p>
+      <div class="score"><b>4.8</b><div><div class="stars" style="font-size:22px">★★★★★</div>120+ reviews on Google</div></div>
+    </div>
+    <div class="rcards">
+      <div class="rcard"><div class="av"></div><div><div class="stars">★★★★★</div><div class="bar"></div><div class="bar" style="width:82%"></div><small>Live Google review · Body Sculpting</small></div></div>
+      <div class="rcard"><div class="av"></div><div><div class="stars">★★★★★</div><div class="bar"></div><div class="bar" style="width:70%"></div><small>Live Google review · Injectables</small></div></div>
+      <div class="rcard"><div class="av"></div><div><div class="stars">★★★★★</div><div class="bar"></div><div class="bar" style="width:88%"></div><small>Live Google review · Laser &amp; Skin</small></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="team">
+  <div class="wrap">
+    <div class="head-row">
+      <div>
+        <span class="eyebrow">Our Team</span>
+        <h2 class="h2">Meet your <em>providers</em></h2>
+        <p class="lead">The people who will actually be treating you.</p>
+      </div>
+    </div>
+    <div class="team">
+      <div class="person"><div class="pic"><img loading="lazy" src="img/team-kim.jpg" alt="Kim, Founder and Owner" width="620" height="776"></div><h3>Kim</h3><div class="role">Founder &amp; Owner</div><p>Founded Blu Ice and oversees care at every location.</p></div>
+      <div class="person"><div class="pic"><img loading="lazy" src="img/team-jenna.jpg" alt="Jenna" width="620" height="776"></div><h3>Jenna</h3><div class="role">AP Aesthetician · Certified Injector</div><p>Injectables, laser and body contouring.</p></div>
+      <div class="person"><div class="pic"><img loading="lazy" src="img/team-chrise.jpg" alt="Chrise" width="326" height="490"></div><h3>Chrise</h3><div class="role">Certified Physician's Assistant</div><p>Clinical care and treatment planning.</p></div>
+      <div class="person"><div class="pic"><img loading="lazy" src="img/team-katie.jpg" alt="Katie" width="620" height="776"></div><h3>Katie</h3><div class="role">AP Aesthetician · Laser Technician</div><p>Advanced skincare and laser treatments.</p></div>
+    </div>
+    <p class="fine">Medical Director: name and credentials listed here.</p>
+  </div>
+</section>
+
+<section class="sec" id="financing" style="padding-top:0">
+  <div class="wrap">
+    <div class="fin">
+      <div>
+        <span class="eyebrow">Financing</span>
+        <h2>Treat now, pay over time</h2>
+        <p class="lead">Cherry and CareCredit plans, including 0% APR options. Checking your rate takes about a minute.</p>
+      </div>
+      <span class="btn btn-pink">See If You Qualify</span>
+    </div>
+    <div class="faq">
+      <div>
+        <span class="eyebrow">Questions</span>
+        <h2 class="h2">Before you <em>book</em></h2>
+      </div>
+      <div>
+        <details open><summary>How do I know which treatment is right for me?</summary><p>Start with a free consultation. A licensed provider reviews your goals and history and recommends a plan.</p></details>
+        <details><summary>Which location should I book?</summary><p>Whichever is closest. All three locations offer consultations, and the booking page shows what each one provides.</p></details>
+        <details><summary>Do you offer payment plans?</summary><p>Yes. You can check your options online before your visit or with our team during your consultation.</p></details>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec final">
+  <div class="wrap">
+    <h2>Ready to start?</h2>
+    <p>Pick a location and a time that works. Your consultation is complimentary.</p>
+    <div class="cta-row" style="justify-content:center;margin:0">
+      <button class="btn btn-blue" data-book>Book a Consultation</button>
+      <span class="btn btn-ghost">Call or Text (651) 330-8642</span>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div>
+        <span class="logo"><img src="img/logo-white.png" alt="Blu Ice" width="900" height="381"><span>MED SPA</span></span>
+        <p style="margin-top:18px;max-width:32ch">Medical aesthetics from licensed providers in Woodbury, Chanhassen and Fargo.</p>
+      </div>
+      <div><h4>Treatments</h4><ul><li>Body Sculpting</li><li>Facial Toning</li><li>Fillers &amp; Tox</li><li>Peptide Therapy</li><li>Laser &amp; Facials</li></ul></div>
+      <div><h4>Locations</h4><ul><li>Woodbury, MN</li><li>Chanhassen, MN</li><li>Fargo, ND</li></ul></div>
+      <div><h4>Contact</h4><ul><li>(651) 330-8642</li><li>Call or text</li><li>Mon–Fri 9am–6pm</li><li>Sat 10am–4pm</li></ul></div>
+    </div>
+    <div class="copy">Website concept for Blu Ice Med Spa. Layout and copy are a draft for review.</div>
+  </div>
+</footer>
+
+<div class="mbar">
+  <a href="#concept">Call</a>
+  <a href="#concept">Text</a>
+  <a class="p" href="#concept" data-book>Book</a>
+</div>
+</div>
+
+<!-- ======================= NOTES ======================= -->
+<div class="view notes" id="view-notes" hidden>
+  <div class="n-hero">
+    <div class="wrap" style="max-width:860px">
+      <span class="eyebrow">Notes for Brady</span>
+      <h1>I went through your website. Here's what I saw.</h1>
+      <p>Brady, I spent some time on bluicemedspa.com and wrote down what stood out. Then I threw together a rough draft of what it could look like, so you can see it instead of just reading about it. Nothing here is final.</p>
+      <a class="btn btn-blue" href="#concept" style="margin-top:28px">Open the concept →</a>
+    </div>
+  </div>
+
+  <div class="n-body">
+
+    <div class="panel">
+      <h2>Where the site is today</h2>
+      <p>It looks clean at first glance. The problems show up once you click around: a lot of it is still template filler, two of your three locations are missing, and Google has a hard time reading it.</p>
+      <div class="scores">
+        <div class="sc"><span>Look and feel</span><div class="track"><i style="width:70%"></i></div><span>7/10</span></div>
+        <div class="sc"><span>Booking</span><div class="track"><i style="width:40%"></i></div><span>4/10</span></div>
+        <div class="sc low"><span>Trust and proof</span><div class="track"><i style="width:30%"></i></div><span>3/10</span></div>
+        <div class="sc low"><span>Technical</span><div class="track"><i style="width:30%"></i></div><span>3/10</span></div>
+        <div class="sc low"><span>Showing up on Google</span><div class="track"><i style="width:20%"></i></div><span>2/10</span></div>
+      </div>
+      <div class="overall"><b>4/10</b><span>overall, and most of it is quick to fix.</span></div>
+    </div>
+
+    <div class="panel">
+      <h2>The logo</h2>
+      <p>This is the one that bugged me most. Your logo file is a square with the signature small in the middle, and the site squeezes that whole square into a tiny box in the corner. You can barely tell it says Blu Ice.</p>
+      <p>I cut the signature out of the square and gave it room, with MED SPA set cleanly beside it. Same logo, you can just read it now.</p>
+      <div class="logo-demo">
+        <div class="ld"><small>On the site now</small><div class="bar2"><div class="old-logo"><img src="img/logo-white.png" alt="Current logo as shown on the live site"></div><div class="fake-nav"><span>Services</span><span>Results</span><span>About</span></div></div></div>
+        <div class="ld"><small>In the concept</small><div class="bar2"><span class="logo"><img src="img/logo-white.png" alt="Blu Ice logo in the concept"><span>MED SPA</span></span></div></div>
+      </div>
+    </div>
+
+    <div class="panel">
+      <h2>What I'd fix</h2>
+      <ol class="issues">
+        <li><div><h3>Some visitors are hitting a dead page</h3><p>bluicemedspa.com without the "www" throws a security error. Only the www version loads. Your old Fargo link, which directories still point to, lands on a 404.</p><p class="fix"><b>Fix:</b> point both addresses to the same site and redirect the old links.</p></div></li>
+        <li><div><h3>Only Woodbury is on the site</h3><p>Chanhassen and Fargo aren't mentioned anywhere. Someone in Fargo has no way to know you're there.</p><p class="fix"><b>Fix:</b> a page for each location with its own address, map, hours and booking.</p></div></li>
+        <li><div><h3>Leftover template text is live</h3><p>The contact page shows "Replace with your Google Maps embed code" where the map should be.</p><p class="fix"><b>Fix:</b> real maps, and a full pass to clear out the filler.</p></div></li>
+        <li><div><h3>The reviews read like filler</h3><p>First name, last initial, and a flat 5.0 with no link. Meanwhile you have over a hundred real reviews on Google that the site isn't using.</p><p class="fix"><b>Fix:</b> pull your real Google reviews in live.</p></div></li>
+        <li><div><h3>"Book Consultation" doesn't book anything</h3><p>It opens a contact form that says you'll reply within 24 hours. People go with whoever lets them pick a time right now.</p><p class="fix"><b>Fix:</b> real online scheduling. Pick a location, pick a time, done.</p></div></li>
+        <li><div><h3>Google can't tell your pages apart</h3><p>Every page has the same title, "Blu Ice Medspa: Woodbury, MN", and there's no sitemap. That makes it hard to rank for anything outside Woodbury.</p><p class="fix"><b>Fix:</b> a proper title and description per page, a sitemap, and business listings data for each location.</p></div></li>
+        <li><div><h3>The team section is thin</h3><p>First names only, and no medical director listed. For a medical practice, that's the first thing a careful patient looks for.</p><p class="fix"><b>Fix:</b> full names, credentials and your medical director, front and center. Your team photos are great, so I made them bigger.</p></div></li>
+      </ol>
+    </div>
+
+    <div class="panel">
+      <h2>What I'd do with the CRM</h2>
+      <p>Right now the only ways to reach you from the site are a contact form and a Gmail address. That means somebody on your team has to see it, remember it, and chase it. Here's how I'd set it up so the system does the chasing.</p>
+      <div class="flow">
+        <div><b>1 · Capture</b>Every form, call, text and DM lands in one place, tagged by location and treatment.</div>
+        <div><b>2 · Respond</b>The lead gets a text back within a minute, even after hours.</div>
+        <div><b>3 · Follow up</b>Reminders, no-show rebooking and consult follow-ups go out on their own.</div>
+        <div><b>4 · Track</b>You see which ad or post each booking came from.</div>
+      </div>
+      <ul class="two">
+        <li><b>Less front desk time.</b> Your team stops digging through inboxes and returning calls a day late.</li>
+        <li><b>Nothing slips.</b> Every lead has an owner, a status and a next step.</li>
+        <li><b>More reviews.</b> A review request goes out after each visit.</li>
+        <li><b>Old patients come back.</b> Past patients get a reason to rebook.</li>
+        <li><b>One view per location.</b> You can see Woodbury, Chanhassen and Fargo side by side.</li>
+        <li><b>You know what's working.</b> Spend goes to what's bringing in booked consults.</li>
+      </ul>
+    </div>
+
+    <div class="panel dark">
+      <span class="tag">Why I'm bringing this up now</span>
+      <h2 style="margin-top:10px">This is what makes FunSculpting pay off</h2>
+      <p>FunSculpting is a premium procedure. It works for a practice when the right people find you, book without friction, and get followed up with. That's exactly what the site and the CRM are for, and it's why the concept gives FunSculpting its own spot right under your results.</p>
+      <p>You also wouldn't be doing the marketing alone. FunSculpting puts $2,500 a month into your marketing for the first 90 days, so the new site and the CRM have leads to work with from day one.</p>
+      <p>Take a look at the concept, click around, and text me what you think. I'm happy to walk through any of it.</p>
+      <div class="sign">
+        <div><b>Avery Racine</b><small>VP of Growth &amp; Business Development, FunSculpting</small></div>
+        <a class="btn btn-blue" href="#concept">Open the concept →</a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="mt">
+  <div class="sheet">
+    <button class="x" aria-label="Close" data-close>×</button>
+    <h3 id="mt">Book your consultation</h3>
+    <p style="color:var(--body);font-size:15px">Pick a location and time. You get an instant confirmation.</p>
+    <div class="step">1 · Location</div>
+    <div class="chips" data-group="loc"><button class="chip" aria-pressed="true">Woodbury</button><button class="chip" aria-pressed="false">Chanhassen</button><button class="chip" aria-pressed="false">Fargo</button></div>
+    <div class="step">2 · Interested in</div>
+    <div class="chips" data-group="t"><button class="chip" aria-pressed="true">Body Sculpting</button><button class="chip" aria-pressed="false">FunSculpting</button><button class="chip" aria-pressed="false">Fillers &amp; Tox</button><button class="chip" aria-pressed="false">Facial Toning</button><button class="chip" aria-pressed="false">Laser &amp; Facials</button></div>
+    <div class="step">3 · Next available</div>
+    <div class="chips" data-group="s"><button class="chip" aria-pressed="true">Tomorrow 10:00</button><button class="chip" aria-pressed="false">Tomorrow 2:30</button><button class="chip" aria-pressed="false">Fri 11:15</button><button class="chip" aria-pressed="false">Sat 10:00</button></div>
+    <button class="btn btn-blue" data-close>Confirm Appointment</button>
+    <p class="note">Demo only. This would connect to the clinic's live scheduling.</p>
+  </div>
+</div>
+
+<script>
+(function(){
+  var views={concept:document.getElementById('view-concept'),notes:document.getElementById('view-notes')};
+  function show(){
+    var h=(location.hash||'').slice(1), v=(h==='notes')?'notes':'concept';
+    var changed=views[v].hidden;
+    views.concept.hidden=(v!=='concept'); views.notes.hidden=(v!=='notes');
+    document.body.className='view-'+v;
+    document.querySelectorAll('.switch a').forEach(function(a){ if(a.dataset.view===v) a.setAttribute('aria-current','page'); else a.removeAttribute('aria-current'); });
+    if(changed || h==='notes' || h==='concept') window.scrollTo(0,0);
+    if(v==='concept' && h && h!=='concept'){ var el=document.getElementById(h); if(el) el.scrollIntoView(); }
+  }
+  window.addEventListener('hashchange',show); show();
+
+  var m=document.getElementById('modal');
+  document.querySelectorAll('[data-book]').forEach(function(b){
+    b.addEventListener('click',function(e){
+      e.preventDefault();
+      var l=b.getAttribute('data-loc');
+      if(l){m.querySelectorAll('[data-group="loc"] .chip').forEach(function(c){c.setAttribute('aria-pressed',c.textContent===l?'true':'false');});}
+      m.classList.add('open');
+    });
+  });
+  m.addEventListener('click',function(e){ if(e.target===m||e.target.hasAttribute('data-close')) m.classList.remove('open'); });
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape') m.classList.remove('open'); });
+  m.querySelectorAll('.chips').forEach(function(g){
+    g.addEventListener('click',function(e){
+      if(!e.target.classList.contains('chip')) return;
+      g.querySelectorAll('.chip').forEach(function(c){c.setAttribute('aria-pressed','false');});
+      e.target.setAttribute('aria-pressed','true');
+    });
+  });
+  var f=document.getElementById('filters');
+  f.addEventListener('click',function(e){
+    var k=e.target.getAttribute('data-f'); if(!k) return;
+    f.querySelectorAll('.chip').forEach(function(c){c.setAttribute('aria-pressed',c===e.target?'true':'false');});
+    document.querySelectorAll('#gal .ba').forEach(function(b){ b.hidden=!(k==='all'||b.getAttribute('data-c')===k); });
+  });
+})();
+</script>
+</body>
+</html>
