@@ -290,6 +290,107 @@ footer .logo img{height:60px}
   .sc{grid-template-columns:1fr 44px}.sc .track{grid-column:1/-1;order:3}
   .float.b{top:40px}
 }
+
+/* quick book */
+.qb{background:var(--navy);padding:0 0 56px}
+.qb-card{background:#fff;border-radius:var(--r-lg);padding:30px 34px;box-shadow:var(--shadow);margin-top:-56px;position:relative;z-index:2;display:grid;grid-template-columns:1fr auto;gap:22px 32px;align-items:end}
+.qb-head{grid-column:1/-1;display:flex;align-items:baseline;gap:18px;flex-wrap:wrap}
+.qb-head h2{font-size:28px}
+.qb-steps{display:grid;grid-template-columns:auto 1fr 1fr;gap:26px}
+.qb-step{min-width:0}
+.qb .step{margin:0 0 10px}
+.qb-go{padding:17px 34px;font-size:16px}
+.hs{flex-wrap:wrap}
+/* confirmation */
+.tick{width:64px;height:64px;border-radius:50%;background:#E3F7EC;color:#1E9E5A;display:grid;place-items:center;font-size:30px;font-weight:700;margin-bottom:18px}
+.done-line{font-weight:600;font-size:17px;margin:8px 0 18px}
+.done-list{list-style:none;margin:0;padding:0;display:grid;gap:10px;color:var(--body);font-size:15px}
+.done-list li{padding-left:26px;position:relative}
+.done-list li::before{content:"✓";position:absolute;left:0;color:#1E9E5A;font-weight:700}
+.mbar svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.swipe-hint{display:none}
+@media(max-width:1000px){
+  .qb-card{grid-template-columns:1fr}
+  .qb-steps{grid-template-columns:1fr}
+  .qb-go{width:100%}
+}
+@media(max-width:640px){
+  /* proposal bar */
+  .pbar .wrap{flex-direction:column;align-items:stretch;gap:8px;padding-top:8px;padding-bottom:8px}
+  .pbar .wrap>div{font-size:11.5px;text-align:center}
+  .switch{display:grid;grid-template-columns:1fr 1fr}
+  .switch a{text-align:center;padding:9px 10px}
+  /* header: logo + book */
+  .nav{height:64px}
+  .logo img{height:38px}
+  .nav-right .btn{display:inline-flex;padding:9px 18px}
+  /* hero */
+  .hero{padding:36px 0 96px}
+  .hero-grid{gap:36px}
+  .hero h1{font-size:46px;margin:18px 0 14px}
+  .hero .sub{font-size:17px}
+  .pill{font-size:10px;letter-spacing:.14em;padding:8px 14px;gap:8px}
+  .cta-row{margin:26px 0 28px;gap:10px}
+  .hero .cta-row .btn{flex:1 1 calc(50% - 5px);padding:14px 10px}
+  .hero .cta-row .btn-blue{flex-basis:100%;padding:18px;font-size:17px}
+  .proof{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;padding-top:22px;font-size:11.5px}
+  .proof b{font-size:19px}
+  .hero-photo{width:100%;max-width:none}
+  .hero-photo .frame{aspect-ratio:1/1;border-radius:160px 160px var(--r-lg) var(--r-lg)}
+  .float{padding:10px 14px;font-size:12px}.float b{font-size:14px}
+  .float.a{left:8px;bottom:18px}.float.b{right:8px;top:18px}
+  /* quick book */
+  .qb{padding-bottom:40px}
+  .qb-card{padding:24px 20px;margin-top:-64px;gap:20px}
+  .qb-head h2{font-size:25px}
+  .qb-steps{gap:18px}
+  .hs{flex-wrap:nowrap;overflow-x:auto;scroll-snap-type:x proximity;margin:0 -20px;padding:2px 20px 6px;scrollbar-width:none}
+  .hs::-webkit-scrollbar{display:none}
+  .hs .chip{flex:none;scroll-snap-align:start}
+  .chip{padding:12px 18px;font-size:15px}
+  .qb-go{padding:18px;font-size:17px}
+  /* trust */
+  .trust div{padding:14px 10px;font-size:12px}
+  /* section rhythm */
+  .sec{padding:60px 0}
+  .head-row{margin-bottom:26px;gap:16px}
+  .h2{font-size:34px;margin:12px 0 10px}
+  .lead{font-size:16px}
+  /* swipe rows */
+  .tgrid,.gal,.team,.lgrid{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:14px;margin:0 -24px;padding:4px 24px 14px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+  .tgrid::-webkit-scrollbar,.gal::-webkit-scrollbar,.team::-webkit-scrollbar,.lgrid::-webkit-scrollbar{display:none}
+  .tgrid>*,.gal>*,.lgrid>*{flex:0 0 84%;scroll-snap-align:center}
+  .team>*{flex:0 0 62%;scroll-snap-align:center}
+  .tcard{min-height:230px}.tcard.big{min-height:300px;padding:26px}.tcard.big h3{font-size:32px}
+  .ba .ph,.ba.wide .ph{aspect-ratio:1/1}
+  .gtile{min-height:0}
+  .swipe-hint{display:flex;align-items:center;gap:8px;font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--blue-dark);margin-top:6px}
+  .swipe-hint::after{content:"→"}
+  #filters{flex-wrap:nowrap;overflow-x:auto;margin:0 -24px;padding:0 24px;scrollbar-width:none}
+  #filters .chip{flex:none}
+  .fs{margin-top:44px}
+  .loc .row .btn{flex:1}
+  .loc .row .btn-blue{flex-basis:100%;padding:15px;font-size:16px}
+  .rev-grid{gap:30px}.score b{font-size:60px}
+  .faq{margin-top:56px;gap:20px}
+  .final .cta-row .btn{flex:1 1 100%;padding:18px}
+  /* bottom bar */
+  .view-concept .mbar{display:flex;padding:10px 12px calc(10px + env(safe-area-inset-bottom));box-shadow:0 -10px 30px -18px rgba(12,28,45,.5)}
+  .mbar a{display:flex;align-items:center;justify-content:center;gap:7px;padding:14px 8px;flex:1}
+  .mbar a.p{flex:2.2;font-size:15px}
+  /* booking as a bottom sheet */
+  .modal{place-items:end stretch;padding:0}
+  .sheet{max-width:none;border-radius:26px 26px 0 0;padding:28px 20px calc(24px + env(safe-area-inset-bottom));max-height:88vh}
+  .sheet::before{content:"";display:block;width:44px;height:5px;border-radius:3px;background:var(--line);margin:-12px auto 18px}
+  .sheet .btn{padding:18px;font-size:17px}
+  /* notes */
+  .n-hero{padding:44px 0 100px}
+  .n-body{padding:0 16px 72px;gap:16px}
+  .panel{padding:24px 20px}.panel h2{font-size:26px}
+  .issues li{grid-template-columns:34px 1fr;gap:10px}
+  .flow{grid-template-columns:1fr}
+  .sign .btn{width:100%}
+}
 @media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
 </style>
 </head>
@@ -355,6 +456,26 @@ footer .logo img{height:60px}
   </div>
 </div>
 
+<section class="qb" id="book" aria-label="Quick booking">
+  <div class="wrap">
+    <div class="qb-card">
+      <div class="qb-head">
+        <span class="tag">Book in under a minute</span>
+        <h2>Pick a spot. Pick a time. Done.</h2>
+      </div>
+      <div class="qb-steps">
+        <div class="qb-step"><div class="step">1 · Location</div>
+          <div class="chips hs" data-group="loc"><button class="chip" aria-pressed="true">Woodbury</button><button class="chip" aria-pressed="false">Chanhassen</button><button class="chip" aria-pressed="false">Fargo</button></div></div>
+        <div class="qb-step"><div class="step">2 · Treatment</div>
+          <div class="chips hs" data-group="t"><button class="chip" aria-pressed="true">Body Sculpting</button><button class="chip" aria-pressed="false">Fillers &amp; Tox</button><button class="chip" aria-pressed="false">Facial Toning</button><button class="chip" aria-pressed="false">Laser &amp; Facials</button><button class="chip" aria-pressed="false">Peptides</button></div></div>
+        <div class="qb-step"><div class="step">3 · Next openings</div>
+          <div class="chips hs" data-group="s"><button class="chip" aria-pressed="true">Tomorrow 10:00</button><button class="chip" aria-pressed="false">Tomorrow 2:30</button><button class="chip" aria-pressed="false">Fri 11:15</button><button class="chip" aria-pressed="false">Sat 10:00</button></div></div>
+      </div>
+      <button class="btn btn-blue qb-go" data-confirm>Book this time</button>
+    </div>
+  </div>
+</section>
+
 <div class="trust">
   <div class="wrap">
     <div><b>Licensed</b> medical providers</div>
@@ -412,6 +533,7 @@ footer .logo img{height:60px}
       <figure class="ba wide" data-c="body"><div class="ph"><img loading="lazy" src="img/ba-male.jpg" alt="Before and after: male body sculpting" width="1300" height="642"><span class="lab l">Before</span><span class="lab r">After</span></div><figcaption>Male Body Sculpting <span>Body Sculpting</span></figcaption></figure>
       <div class="gtile"><span class="tag">Your turn</span><h3>See what a plan looks like for you</h3><button class="btn btn-blue btn-sm" data-book>Book a free consult</button></div>
     </div>
+    <p class="swipe-hint">Swipe for more results</p>
     <p class="fine">Individual results vary. Photos are unretouched and shared with patient consent.</p>
 
     <div class="fs">
@@ -546,9 +668,9 @@ footer .logo img{height:60px}
 </footer>
 
 <div class="mbar">
-  <a href="#concept">Call</a>
-  <a href="#concept">Text</a>
-  <a class="p" href="#concept" data-book>Book</a>
+  <a href="#concept"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a1 1 0 0 1-1 1A16 16 0 0 1 4 5a1 1 0 0 1 1-1z"/></svg>Call</a>
+  <a href="#concept"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z"/></svg>Text</a>
+  <a class="p" href="#concept" data-book><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16v14H4zM4 10h16M8 3v4M16 3v4"/></svg>Book in 1 minute</a>
 </div>
 </div>
 
@@ -638,6 +760,15 @@ footer .logo img{height:60px}
 <div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="mt">
   <div class="sheet">
     <button class="x" aria-label="Close" data-close>×</button>
+    <div id="done" hidden>
+      <div class="tick" aria-hidden="true">✓</div>
+      <h3>You're booked</h3>
+      <p class="done-line" id="doneline"></p>
+      <ul class="done-list"><li>Confirmation text sent to your phone</li><li>Reminder the day before</li><li>Directions and what to expect, in one link</li></ul>
+      <button class="btn btn-blue" data-close>Done</button>
+      <p class="note">Demo only. No appointment was made.</p>
+    </div>
+    <div id="formpanel">
     <h3 id="mt">Book your consultation</h3>
     <p style="color:var(--body);font-size:15px">Pick a location and time. You get an instant confirmation.</p>
     <div class="step">1 · Location</div>
@@ -646,8 +777,9 @@ footer .logo img{height:60px}
     <div class="chips" data-group="t"><button class="chip" aria-pressed="true">Body Sculpting</button><button class="chip" aria-pressed="false">FunSculpting</button><button class="chip" aria-pressed="false">Fillers &amp; Tox</button><button class="chip" aria-pressed="false">Facial Toning</button><button class="chip" aria-pressed="false">Laser &amp; Facials</button></div>
     <div class="step">3 · Next available</div>
     <div class="chips" data-group="s"><button class="chip" aria-pressed="true">Tomorrow 10:00</button><button class="chip" aria-pressed="false">Tomorrow 2:30</button><button class="chip" aria-pressed="false">Fri 11:15</button><button class="chip" aria-pressed="false">Sat 10:00</button></div>
-    <button class="btn btn-blue" data-close>Confirm Appointment</button>
+    <button class="btn btn-blue" data-confirm>Confirm Appointment</button>
     <p class="note">Demo only. This would connect to the clinic's live scheduling.</p>
+    </div>
   </div>
 </div>
 
@@ -665,18 +797,23 @@ footer .logo img{height:60px}
   }
   window.addEventListener('hashchange',show); show();
 
-  var m=document.getElementById('modal');
+  var m=document.getElementById('modal'), done=document.getElementById('done'), form=document.getElementById('formpanel');
+  function pick(scope,g){var c=scope.querySelector('[data-group="'+g+'"] .chip[aria-pressed="true"]');return c?c.textContent:'';}
+  function setLoc(l){m.querySelectorAll('[data-group="loc"] .chip').forEach(function(c){c.setAttribute('aria-pressed',c.textContent===l?'true':'false');});}
+  function openForm(){done.hidden=true;form.hidden=false;m.classList.add('open');}
+  function openDone(scope){
+    document.getElementById('doneline').textContent=pick(scope,'loc')+' · '+pick(scope,'t')+' · '+pick(scope,'s');
+    form.hidden=true;done.hidden=false;m.classList.add('open');
+  }
   document.querySelectorAll('[data-book]').forEach(function(b){
-    b.addEventListener('click',function(e){
-      e.preventDefault();
-      var l=b.getAttribute('data-loc');
-      if(l){m.querySelectorAll('[data-group="loc"] .chip').forEach(function(c){c.setAttribute('aria-pressed',c.textContent===l?'true':'false');});}
-      m.classList.add('open');
-    });
+    b.addEventListener('click',function(e){e.preventDefault();var l=b.getAttribute('data-loc');if(l)setLoc(l);openForm();});
+  });
+  document.querySelectorAll('[data-confirm]').forEach(function(b){
+    b.addEventListener('click',function(){openDone(b.closest('.qb-card')||m);});
   });
   m.addEventListener('click',function(e){ if(e.target===m||e.target.hasAttribute('data-close')) m.classList.remove('open'); });
   document.addEventListener('keydown',function(e){ if(e.key==='Escape') m.classList.remove('open'); });
-  m.querySelectorAll('.chips').forEach(function(g){
+  document.querySelectorAll('.chips[data-group]').forEach(function(g){
     g.addEventListener('click',function(e){
       if(!e.target.classList.contains('chip')) return;
       g.querySelectorAll('.chip').forEach(function(c){c.setAttribute('aria-pressed','false');});
